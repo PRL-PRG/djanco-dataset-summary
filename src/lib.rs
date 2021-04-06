@@ -7,12 +7,12 @@ use djanco::csv::*;
 
 use djanco_ext::*;
 
-#[djanco(April, 2020, subsets(Java))]
+#[djanco(April, 2020, subsets(Generic))]
 pub fn projects(database: &Database, _log: &Log, output: &Path) -> Result<(), std::io::Error>  {
     database.projects().into_csv_in_dir(output, "projects.csv")
 }
 
-#[djanco(April, 2020, subsets(Java))]
+#[djanco(April, 2020, subsets(Generic))]
 pub fn project_commits_all_branches(database: &Database, _log: &Log, output: &Path) -> Result<(), std::io::Error>  {
     let headers = vec!["project_id",
                        "commit_id", "commit_hash",
@@ -35,7 +35,7 @@ pub fn project_commits_all_branches(database: &Database, _log: &Log, output: &Pa
         .into_csv_with_headers_in_dir(headers, output, "project_commits_all_branches.csv")
 }
 
-#[djanco(April, 2020, subsets(Java))]
+#[djanco(April, 2020, subsets(Generic))]
 pub fn project_users_all_branches(database: &Database, _log: &Log, output: &Path) -> Result<(), std::io::Error>  {
     let headers = vec!["project_id", "user_id",
                        "authored_commit_count", "committed_commit_count",
@@ -55,12 +55,12 @@ pub fn project_users_all_branches(database: &Database, _log: &Log, output: &Path
         .into_csv_with_headers_in_dir(headers, output, "project_users_all_branches.csv")
 }
 
-// #[djanco(April, 2020, subsets(Java))]
+// #[djanco(April, 2020, subsets(Generic))]
 // pub fn commits(database: &Database, _log: &Log, output: &Path) -> Result<(), std::io::Error>  {
 //     database.commits().into_csv_in_dir(output, "commits.csv")
 // }
 //
-// #[djanco(April, 2020, subsets(Java))]
+// #[djanco(April, 2020, subsets(Generic))]
 // pub fn users(database: &Database, _log: &Log, output: &Path) -> Result<(), std::io::Error>  {
 //     database.commits().into_csv_in_dir(output, "users.csv")
 // }
