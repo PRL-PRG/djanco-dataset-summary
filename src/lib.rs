@@ -55,12 +55,12 @@ pub fn project_users_all_branches(database: &Database, _log: &Log, output: &Path
         .into_csv_with_headers_in_dir(headers, output, "project_users_all_branches.csv")
 }
 
-// #[djanco(April, 2020, subsets(Generic))]
-// pub fn commits(database: &Database, _log: &Log, output: &Path) -> Result<(), std::io::Error>  {
-//     database.commits().into_csv_in_dir(output, "commits.csv")
-// }
-//
-// #[djanco(April, 2020, subsets(Generic))]
-// pub fn users(database: &Database, _log: &Log, output: &Path) -> Result<(), std::io::Error>  {
-//     database.commits().into_csv_in_dir(output, "users.csv")
-// }
+#[djanco(April, 2020, subsets(Generic))]
+pub fn commits(database: &Database, _log: &Log, output: &Path) -> Result<(), std::io::Error>  {
+    database.commits().into_csv_in_dir(output, "commits.csv")
+}
+
+#[djanco(April, 2020, subsets(Generic))]
+pub fn users(database: &Database, _log: &Log, output: &Path) -> Result<(), std::io::Error>  {
+    database.commits().into_csv_in_dir(output, "users.csv")
+}
