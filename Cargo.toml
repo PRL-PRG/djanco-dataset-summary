@@ -9,5 +9,5 @@ license = "MIT"
 
 [dependencies]
 clap = "3.0.0-beta.2"
-djanco = { git = "https://github.com/PRL-PRG/djanco", branch = "main" }
+djanco = { git = "https://github.com/PRL-PRG/djanco", branch = "cache_utils", version = "0.3.2" }
 djanco_ext = { git = "https://github.com/PRL-PRG/djanco_ext" }
